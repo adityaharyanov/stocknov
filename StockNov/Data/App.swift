@@ -9,6 +9,10 @@ import Foundation
 
 class App {
     
-    static let ApiKey = "Welcome to Alpha Vantage! Your dedicated access key is: GZ18HMX7QE5KZQ74. Please record this API key for future access to Alpha Vantage."
+    static var apiKey : String {
+        return keyChain.getApiKey()
+    }
+    static let userDefault = UserDefaultService()
+    static let keyChain = KeyChainService()
     
 }

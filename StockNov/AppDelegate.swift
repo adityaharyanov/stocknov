@@ -14,6 +14,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if App.keyChain.getApiKey().isEmpty{
+            App.keyChain.setApiKey(newApiKey: "GZ18HMX7QE5KZQ74")
+        }
+        
+        
+        if App.userDefault.interval?.isEmpty ?? true {
+            App.userDefault.interval = "60min"
+        }
+        
+        if App.userDefault.outputSize == .none {
+            App.userDefault.outputSize = OutputSize.compact
+        }
+        
         return true
     }
 
